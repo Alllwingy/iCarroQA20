@@ -1,0 +1,24 @@
+2023-10-24 17:28:27,561 INFO m.ApplicationManager [ApplicationManager.java:26] navigated to the url: https://ilcarro.web.app/search
+2023-10-24 17:28:27,563 INFO m.TestNGListener [TestNGListener.java:51] start test - onstart - : Gradle test
+2023-10-24 17:28:27,580 INFO t.BaseTest [BaseTest.java:45] --------------------------------------------------------------
+2023-10-24 17:28:27,580 INFO t.BaseTest [BaseTest.java:46] started method: positiveLoginUserDTO, with parameters: []
+2023-10-24 17:28:27,581 INFO m.WDListener [WDListener.java:72] navigate to: https://ilcarro.web.app/search
+2023-10-24 17:28:27,716 INFO m.WDListener [WDListener.java:79] navigate to: https://ilcarro.web.app/search
+2023-10-24 17:28:27,717 INFO m.TestNGListener [TestNGListener.java:16] started test: positiveLoginUserDTO
+2023-10-24 17:28:27,718 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //a[contains(@href= '/login')]
+2023-10-24 17:28:27,748 INFO m.WDListener [WDListener.java:190] start on exception in WDListener class
+2023-10-24 17:28:27,749 INFO m.WDListener [WDListener.java:192] created name of the screenshot: src/test/screenshots/screenshot-2023-10-24_17-28-27.749.png
+2023-10-24 17:28:27,749 ERROR m.WDListener [WDListener.java:196] org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //a[contains(@href= '/login')] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//a[contains(@href= '/login')]' is not a valid XPath expression.
+  (Session info: chrome=118.0.5993.89)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ALLLWINGY', ip: '192.168.81.8', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\ALLL~1.WIN\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56561}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b2ee17703b26f3e13e35e27ba1092115
+*** Element info: {Using=xpath, value=//a[contains(@href= '/login')]}
+2023-10-24 17:28:28,181 INFO m.TestNGListener [TestNGListener.java:28] test failure: positiveLoginUserDTO
+2023-10-24 17:28:28,181 INFO t.BaseTest [BaseTest.java:52] stopped method: positiveLoginUserDTO, with parameters: []
+2023-10-24 17:28:28,182 INFO m.TestNGListener [TestNGListener.java:57] all code executed: passed tests: [ResultMap map=[]]
+2023-10-24 17:28:28,182 INFO m.TestNGListener [TestNGListener.java:58] all code executed: failed tests: [ResultMap map=[[TestResult name=positiveLoginUserDTO status=FAILURE method=LoginTests.positiveLoginUserDTO()[pri:1, instance:tests.LoginTests@3d6f0054] output={null}]]]
