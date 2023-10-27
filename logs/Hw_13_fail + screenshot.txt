@@ -1,0 +1,53 @@
+2023-10-27 07:46:51,185 INFO m.ApplicationManager [ApplicationManager.java:32] CHROME driver
+2023-10-27 07:46:53,136 INFO m.ApplicationManager [ApplicationManager.java:41] open: https://ilcarro.web.app/search Start testing: 2023-10-27T07:46:53.136
+2023-10-27 07:46:53,271 INFO m.ApplicationManager [ApplicationManager.java:49] navigated to the url: https://ilcarro.web.app/search
+2023-10-27 07:46:53,272 INFO m.TestNGListener [TestNGListener.java:51] start test - onstart - : Gradle test
+2023-10-27 07:46:53,292 INFO t.BaseTest [BaseTest.java:63] --------------------------------------------------------------
+2023-10-27 07:46:53,292 INFO t.BaseTest [BaseTest.java:64] started method: positiveLoginUserDTOWith, with parameters: [java.lang.reflect.Method arg0]
+2023-10-27 07:46:53,294 INFO m.WDListener [WDListener.java:72] navigate to: https://ilcarro.web.app/search
+2023-10-27 07:46:53,418 INFO m.WDListener [WDListener.java:79] navigate to: https://ilcarro.web.app/search
+2023-10-27 07:46:53,419 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //a[contains(@href, '/login')]
+2023-10-27 07:46:53,438 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //a[contains(@href, '/login')], element name is: a
+2023-10-27 07:46:53,441 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-27 07:46:53,500 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-27 07:46:53,501 INFO m.TestNGListener [TestNGListener.java:16] started test: positiveLoginUserDTOWith
+2023-10-27 07:46:53,502 INFO t.BaseTest [LoginTests.java:44] in method: positiveLoginUserDTOWith fill email input field with: testqa20gmail.com and password input field with: 123456Aa$ and click button Yalla
+2023-10-27 07:46:53,502 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='email']
+2023-10-27 07:46:53,530 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='email'], element name is: input
+2023-10-27 07:46:53,530 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-27 07:46:53,563 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-27 07:46:53,666 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='password']
+2023-10-27 07:46:53,682 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='password'], element name is: input
+2023-10-27 07:46:53,682 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-27 07:46:53,713 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-27 07:46:53,771 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //button[@type='submit']
+2023-10-27 07:46:53,790 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //button[@type='submit'], element name is: button
+2023-10-27 07:46:53,791 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-27 07:46:53,817 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-27 07:46:53,820 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //h2[@class='message']
+2023-10-27 07:47:53,893 INFO m.WDListener [WDListener.java:190] start on exception in WDListener class
+2023-10-27 07:47:53,894 INFO m.WDListener [WDListener.java:192] created name of the screenshot: src/test/screenshots/screenshot-2023-10-27_07-47-53.893.png
+2023-10-27 07:47:53,894 ERROR m.WDListener [WDListener.java:196] org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[@class='message']"}
+  (Session info: chrome=118.0.5993.89)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ALLLWINGY', ip: '192.168.246.8', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\ALLL~1.WIN\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52454}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 574809bdaeef77002bd36aaa99eccf83
+*** Element info: {Using=xpath, value=//h2[@class='message']}
+2023-10-27 07:47:54,607 INFO m.TestNGListener [TestNGListener.java:28] test failure: positiveLoginUserDTOWith
+2023-10-27 07:47:54,609 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //button[@type='button']
+2023-10-27 07:48:54,658 INFO m.WDListener [WDListener.java:190] start on exception in WDListener class
+2023-10-27 07:48:54,658 INFO m.WDListener [WDListener.java:192] created name of the screenshot: src/test/screenshots/screenshot-2023-10-27_07-48-54.658.png
+2023-10-27 07:48:54,659 ERROR m.WDListener [WDListener.java:196] org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='button']"}
+  (Session info: chrome=118.0.5993.89)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ALLLWINGY', ip: '192.168.246.8', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_341'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\ALLL~1.WIN\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52454}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 574809bdaeef77002bd36aaa99eccf83
+*** Element info: {Using=xpath, value=//button[@type='button']}
+2023-10-27 07:48:55,047 INFO m.TestNGListener [TestNGListener.java:57] all code executed: passed tests: [ResultMap map=[]]
+2023-10-27 07:48:55,047 INFO m.TestNGListener [TestNGListener.java:58] all code executed: failed tests: [ResultMap map=[[TestResult name=positiveLoginUserDTOWith status=FAILURE method=LoginTests.positiveLoginUserDTOWith(java.lang.reflect.Method)[pri:0, instance:tests.LoginTests@5e600dd5] output={null}]]]

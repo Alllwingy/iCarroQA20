@@ -4,9 +4,7 @@ import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class UserHelper extends BaseHelper {
 
@@ -36,22 +34,32 @@ public class UserHelper extends BaseHelper {
     By errorMessageWrongEmailReg = By.xpath("//input[@autocomplete='email']/..//div//div");
     By errorMessageIncorrectPasswordReg = By.xpath("//input[@autocomplete='new-password']/..//div//div");
 
-    public void login(UserDTO userDTO) {
+    public void openLoginPage() {
+
         clickBase(btnLoginNavigatorMenu);
-        typeTextBase(inputEmailLoginForm, userDTO.getEmail());
-        typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
+    }
+
+    public void openRegistrationPage() {
+
+        clickBase(btnOpenRegForm);
+    }
+
+    public void login(UserDTO user) {
+
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnYallaLoginForm);
     }
 
-    public void login(UserDTOWith userDTO) {
-        clickBase(btnLoginNavigatorMenu);
-        typeTextBase(inputEmailLoginForm, userDTO.getEmail());
-        typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
+    public void login(UserDTOWith user) {
+
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnYallaLoginForm);
     }
 
-    public void loginUserDtoLombok(UserDtoLombok user) {
-        clickBase(btnLoginNavigatorMenu);
+    public void login(UserDtoLombok user) {
+
         typeTextBase(inputEmailLoginForm, user.getEmail());
         typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnYallaLoginForm);
@@ -89,13 +97,14 @@ public class UserHelper extends BaseHelper {
     }
 
     public void logout() {
+
         jsClickBase(buttonLogout);
     }
 
     public void clickOkPopUpSuccessLogin() {
         // clickBase(btnOkPopUp);
         // typeTextBase(textPopUpSuccessRegH1, String.valueOf(Keys.ESCAPE));
-        jsClickBase(btnOkPopUpStr);
+        clickBase(btnOkPopUp);
         // clickByXY(btnOkPopUp, 0.5, 2);
         //      clickBase(textPopUpSuccessRegH1);
 //        try {

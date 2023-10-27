@@ -2,43 +2,55 @@ package tests;
 
 import dto.UserDtoLombok;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class RegistrationTests extends BaseTest{
 
-    @BeforeTest
-    public void preconditionsLogin() {
+    String repetedLoggerText;
+
+    @BeforeMethod(alwaysRun = true)
+    public void beforeMethod() {
+
+        repetedLoggerText = " fill email input field with: %s and password input field with: %s and click button Yalla";
 
         app.navigateToMainPage();
-//        app.refresh();
+        app.getUserHelper().openRegistrationPage();
     }
 
-    @Test
+    @AfterMethod (alwaysRun = true)
+    public void afterMethod() {
+
+        flagAfterMethod();
+    }
+
+    @Test (groups = { "regression", "all" })
     public void positiveRegistration() {
+
         String email = randomUtils.generateEmail(7);
 
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)
                 .password("123456Aa$")
-                .lastName("abdfg")
-                .name("test")
+                .lastName(faker.lastName())
+                .name(faker.firstName())
                 .build();
 
         app.getUserHelper().fillRegistrationForm(user);
-        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterRegistration());
 
-        app.getUserHelper().logout();
+        isFlagPopUp = true;
+        isFlagLogin = true;
+
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterRegistration());
     }
 
     @Test
     public void negativeRegistrationWrongEmail() {
+
         UserDtoLombok user = UserDtoLombok.builder()
                 .email("abc@")
                 .password("123456Aa$")
-                .lastName("abdfg")
-                .name("test")
+                .lastName(faker.lastName())
+                .name(faker.firstName())
                 .build();
 
         app.getUserHelper().fillRegistrationForm(user);
@@ -47,13 +59,14 @@ public class RegistrationTests extends BaseTest{
 
     @Test
     public void negativeRegistrationWrongPassword() {
+
         String email = randomUtils.generateEmail(7);
 
         UserDtoLombok user = UserDtoLombok.builder()
                 .email(email)
                 .password("123456")
-                .lastName("abdfg")
-                .name("test")
+                .lastName(faker.lastName())
+                .name(faker.firstName())
                 .build();
 
         app.getUserHelper().fillRegistrationForm(user);
@@ -65,8 +78,8 @@ public class RegistrationTests extends BaseTest{
         UserDtoLombok user = UserDtoLombok.builder()
                 .email("")
                 .password("123456Aa$")
-                .lastName("abdfg")
-                .name("test")
+                .lastName(faker.lastName())
+                .name(faker.firstName())
                 .build();
 
         app.getUserHelper().fillRegistrationForm(user);

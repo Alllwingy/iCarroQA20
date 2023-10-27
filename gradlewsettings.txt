@@ -1,0 +1,11 @@
+./gradlew test
+./gradlew clean test
+./gradlew clean ilcarrotests
+./gradlew clean -Pbrowser=firefox ilcarrotests
+./gradlew clean -Pbrowser=chrome ilcarrotests
+./gradlew clean -Pbrowser=firefox -Dsuite=login ilcarrotests
+./gradlew clean -Pbrowser=firefox -Dgroups=smoke ilcarrotests
+./gradlew clean -Dgroups=smoke ilcarrotests
+./gradlew clean -Pbrowser=firefox -Dgroups=all ilcarrotests
+./gradlew clean -Dgroups=regression -Ptarget=config ilcarrotests
+ ./gradlew clean -Dgroups=regression -Ptarget=fake ilcarrotests

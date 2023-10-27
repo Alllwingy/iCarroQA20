@@ -195,7 +195,6 @@ public class WDListener extends AbstractWebDriverEventListener {
 //        logger.error(Arrays.toString(throwable.getStackTrace()));
         logger.error(throwable.toString());
 
-
         takeScreenshot((TakesScreenshot) driver, fileName);
     }
 
@@ -212,7 +211,6 @@ public class WDListener extends AbstractWebDriverEventListener {
             e.printStackTrace();
             logger.error("got an exception for adding screenshot to the folder: " + e.getMessage());
         }
-
     }
 
     @Override
