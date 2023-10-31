@@ -1,5 +1,7 @@
 package tests;
 
+import data.DataProviderLogin;
+import dto.UserDtoLombok;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -24,13 +26,13 @@ public class LoginTests extends BaseTest {
         flagAfterMethod();
     }
 
-    @Test (groups = { "smoke", "all" })
-    public void positiveLoginUserDTO(Method method) {
+    @Test (groups = { "smoke", "all" }, dataProvider = "dataCSV", dataProviderClass = DataProviderLogin.class)
+    public void positiveLoginUserDTO(UserDtoLombok userDP, Method method) {
 
         logger.info(String.format("in method: " + method.getName()
-                + repetedLoggerText, userDTO.getEmail(), userDTO.getPassword()));
+                + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
 
-        app.getUserHelper().login(userDTO);
+        app.getUserHelper().login(userDP);
 
         isFlagPopUp = true;
         isFlagLogin = true;
@@ -66,15 +68,13 @@ public class LoginTests extends BaseTest {
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
     }
 
-    @Test
-    public void negativePasswordWithoutSymbol(Method method) {
-
-        userDtoLombok.setPassword("123456Aaa");
+    @Test (dataProvider = "dataCSV", dataProviderClass = DataProviderLogin.class)
+    public void negativePasswordWithoutSymbol(UserDtoLombok userDP, Method method) {
 
         logger.info(String.format("in method: " + method.getName()
-                + repetedLoggerText, userDTOWith.getEmail(), userDTOWith.getPassword()));
+                + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
 
-        app.getUserHelper().login(userDtoLombok);
+        app.getUserHelper().login(userDP);
 
         isFlagPopUp = true;
 

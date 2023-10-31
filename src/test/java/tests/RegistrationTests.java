@@ -1,8 +1,11 @@
 package tests;
 
+import data.DataProviderRegistration;
 import dto.UserDtoLombok;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 public class RegistrationTests extends BaseTest{
 
@@ -23,19 +26,22 @@ public class RegistrationTests extends BaseTest{
         flagAfterMethod();
     }
 
-    @Test (groups = { "regression", "all" })
-    public void positiveRegistration() {
+    @Test (groups = { "regression", "all" }, dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
+    public void positiveRegistration(UserDtoLombok userDP, Method method) {
 
-        String email = randomUtils.generateEmail(7);
+//        String email = randomUtils.generateEmail(7);
 
-        UserDtoLombok user = UserDtoLombok.builder()
-                .email(email)
-                .password("123456Aa$")
-                .lastName(faker.lastName())
-                .name(faker.firstName())
-                .build();
+//        UserDtoLombok user = UserDtoLombok.builder()
+//                .email(email)
+//                .password("123456Aa$")
+//                .lastName(faker.lastName())
+//                .name(faker.firstName())
+//                .build();
 
-        app.getUserHelper().fillRegistrationForm(user);
+        logger.info(String.format("in method: " + method.getName()
+                + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
+
+        app.getUserHelper().fillRegistrationForm(userDP);
 
         isFlagPopUp = true;
         isFlagLogin = true;
@@ -43,33 +49,39 @@ public class RegistrationTests extends BaseTest{
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterRegistration());
     }
 
-    @Test
-    public void negativeRegistrationWrongEmail() {
+    @Test (dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
+    public void negativeRegistrationWrongEmail(UserDtoLombok userDP, Method method) {
 
-        UserDtoLombok user = UserDtoLombok.builder()
-                .email("abc@")
-                .password("123456Aa$")
-                .lastName(faker.lastName())
-                .name(faker.firstName())
-                .build();
+//        UserDtoLombok user = UserDtoLombok.builder()
+//                .email("abc@")
+//                .password("123456Aa$")
+//                .lastName(faker.lastName())
+//                .name(faker.firstName())
+//                .build();
 
-        app.getUserHelper().fillRegistrationForm(user);
+        logger.info(String.format("in method: " + method.getName()
+                + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
+
+        app.getUserHelper().fillRegistrationForm(userDP);
         Assert.assertTrue(app.getUserHelper().validateMessageIncorrectEmailReg());
     }
 
-    @Test
-    public void negativeRegistrationWrongPassword() {
+    @Test (dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
+    public void negativeRegistrationWrongPassword(UserDtoLombok userDP, Method method) {
 
-        String email = randomUtils.generateEmail(7);
+//        String email = randomUtils.generateEmail(7);
+//
+//        UserDtoLombok user = UserDtoLombok.builder()
+//                .email(email)
+//                .password("123456")
+//                .lastName(faker.lastName())
+//                .name(faker.firstName())
+//                .build();
 
-        UserDtoLombok user = UserDtoLombok.builder()
-                .email(email)
-                .password("123456")
-                .lastName(faker.lastName())
-                .name(faker.firstName())
-                .build();
+        logger.info(String.format("in method: " + method.getName()
+                + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
 
-        app.getUserHelper().fillRegistrationForm(user);
+        app.getUserHelper().fillRegistrationForm(userDP);
         Assert.assertTrue(app.getUserHelper().validateMessageWrongPasswordReg());
     }
 

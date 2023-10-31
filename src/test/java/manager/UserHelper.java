@@ -32,7 +32,8 @@ public class UserHelper extends BaseHelper {
     String buttonLogout = "document.querySelector('a.navigation-link.ng-star-inserted').click();";
     By btnOkPopUp = By.xpath("//button[@type='button']");
     By errorMessageWrongEmailReg = By.xpath("//input[@autocomplete='email']/..//div//div");
-    By errorMessageIncorrectPasswordReg = By.xpath("//input[@autocomplete='new-password']/..//div//div");
+    By errorMessageIncorrectPasswordReg = By.xpath("//div[@class='error']/div[contains(text(), '[@$#^&*!]')]");
+
 
     public void openLoginPage() {
 
@@ -66,14 +67,17 @@ public class UserHelper extends BaseHelper {
     }
 
     public boolean validatePopUpMessageSuccessAfterLogin() {
+
         return isTextEqual(textSuccessLoginPopUp, waitBase(textSuccessLoginPopUp, "Logged in success"));
     }
 
     public boolean validatePopUpMessageLoginIncorrect() {
+
         return isTextEqual(textSuccessLoginPopUp, waitBase(textSuccessLoginPopUp, "\"Login or Password incorrect\""));
     }
 
     public void fillRegistrationForm(UserDtoLombok user) {
+
         clickBase(btnOpenRegForm);
         typeTextBase(inputNameReg, user.getName());
         typeTextBase(inputLastNameReg, user.getLastName());
@@ -87,8 +91,9 @@ public class UserHelper extends BaseHelper {
     }
 
     public boolean validatePopUpMessageSuccessAfterRegistration() {
+
         String expectedResult = "Registered".toUpperCase();
-//        return isTextEqual(textPopUpSuccessRegH1, waitBase(textPopUpSuccessRegH1, expectedResult));
+
         return isTextEqual(textPopUpSuccessRegH1, expectedResult);
     }
 
@@ -125,7 +130,7 @@ public class UserHelper extends BaseHelper {
 
     public boolean validateMessageWrongPasswordReg() {
         return isTextEqual(errorMessageIncorrectPasswordReg, waitBase(errorMessageIncorrectPasswordReg,
-                "Password must contain minimum 8 symbols"));
+                "Password must contain 1 uppercase letter, 1 lowercase letter, 1 number and one special symbol of [@$#^&*!]"));
     }
 
     public boolean validateErrorEmptyEmailReg() {
