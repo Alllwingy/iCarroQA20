@@ -1,0 +1,56 @@
+2023-10-31 20:57:45,171 INFO m.ApplicationManager [ApplicationManager.java:32] CHROME driver
+2023-10-31 20:57:46,741 INFO m.ApplicationManager [ApplicationManager.java:41] open: https://ilcarro.web.app/search Start testing: 2023-10-31T20:57:46.740
+2023-10-31 20:57:46,873 INFO m.ApplicationManager [ApplicationManager.java:49] navigated to the url: https://ilcarro.web.app/search
+2023-10-31 20:57:46,874 INFO m.TestNGListener [TestNGListener.java:51] start test - onstart - : Gradle test
+2023-10-31 20:57:47,002 INFO t.BaseTest [BaseTest.java:63] --------------------------------------------------------------
+2023-10-31 20:57:47,006 INFO t.BaseTest [BaseTest.java:64] started method: positiveRegistration, with parameters: [dto.UserDtoLombok arg0, java.lang.reflect.Method arg1]
+2023-10-31 20:57:47,007 INFO m.WDListener [WDListener.java:72] navigate to: https://ilcarro.web.app/search
+2023-10-31 20:57:47,155 INFO m.WDListener [WDListener.java:79] navigate to: https://ilcarro.web.app/search
+2023-10-31 20:57:47,155 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //a[contains(@href, '/registration')]
+2023-10-31 20:57:47,184 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //a[contains(@href, '/registration')], element name is: a
+2023-10-31 20:57:47,188 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,251 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,252 INFO m.TestNGListener [TestNGListener.java:16] started test: positiveRegistration
+2023-10-31 20:57:47,252 INFO t.BaseTest [RegistrationTests.java:41] in method: positiveRegistration fill email input field with: leida.klocko@gmail.com and password input field with: i38ubkk2umsp7uA$ and click button Yalla
+2023-10-31 20:57:47,254 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //a[contains(@href, '/registration')]
+2023-10-31 20:57:47,274 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //a[contains(@href, '/registration')], element name is: a
+2023-10-31 20:57:47,274 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,298 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,298 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='name']
+2023-10-31 20:57:47,321 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='name'], element name is: input
+2023-10-31 20:57:47,321 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,371 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,448 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='lastName']
+2023-10-31 20:57:47,474 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='lastName'], element name is: input
+2023-10-31 20:57:47,475 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,504 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,565 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='email']
+2023-10-31 20:57:47,583 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='email'], element name is: input
+2023-10-31 20:57:47,584 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,627 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,732 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='password']
+2023-10-31 20:57:47,753 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='password'], element name is: input
+2023-10-31 20:57:47,753 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,797 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,861 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //input[@id='terms-of-use']
+2023-10-31 20:57:47,874 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //input[@id='terms-of-use'], element name is: input
+2023-10-31 20:57:47,882 INFO m.WDListener [WDListener.java:166] start execute js script: document.querySelector('#terms-of-use').click()
+2023-10-31 20:57:47,903 INFO m.WDListener [WDListener.java:173] script executed success: document.querySelector('#terms-of-use').click()
+2023-10-31 20:57:47,903 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //button[@type='submit']
+2023-10-31 20:57:47,926 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //button[@type='submit'], element name is: button
+2023-10-31 20:57:47,926 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:47,973 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:47,974 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //*[text()='Registered']
+2023-10-31 20:57:49,224 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //*[text()='Registered'], element name is: h1
+2023-10-31 20:57:49,234 INFO m.WDListener [WDListener.java:230] get text from the element with text: 
+2023-10-31 20:57:49,242 INFO m.WDListener [WDListener.java:237] got the text successful
+2023-10-31 20:57:49,244 INFO m.TestNGListener [TestNGListener.java:22] test success: positiveRegistration
+2023-10-31 20:57:49,245 INFO m.WDListener [WDListener.java:128] before find element: By.xpath: //button[@type='button']
+2023-10-31 20:57:49,269 INFO m.WDListener [WDListener.java:135] element found success: By.xpath: //button[@type='button'], element name is: button
+2023-10-31 20:57:49,270 INFO m.WDListener [WDListener.java:142] start method click: 
+2023-10-31 20:57:49,298 INFO m.WDListener [WDListener.java:149] done method click: 
+2023-10-31 20:57:49,298 INFO m.WDListener [WDListener.java:166] start execute js script: document.querySelector('a.navigation-link.ng-star-inserted').click();
+2023-10-31 20:57:49,326 INFO m.WDListener [WDListener.java:173] script executed success: document.querySelector('a.navigation-link.ng-star-inserted').click();
+2023-10-31 20:57:49,326 INFO t.BaseTest [BaseTest.java:70] stopped method: positiveRegistration, with parameters: [dto.UserDtoLombok arg0, java.lang.reflect.Method arg1]
+2023-10-31 20:57:49,328 INFO m.TestNGListener [TestNGListener.java:57] all code executed: passed tests: [ResultMap map=[[TestResult name=positiveRegistration status=SUCCESS method=RegistrationTests.positiveRegistration(dto.UserDtoLombok,java.lang.reflect.Method)[pri:0, instance:tests.RegistrationTests@576d5deb] output={null}]]]
+2023-10-31 20:57:49,328 INFO m.TestNGListener [TestNGListener.java:58] all code executed: failed tests: [ResultMap map=[]]

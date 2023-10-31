@@ -20,7 +20,7 @@ public class DataProviderRegistration {
 
         switch (method.getName()) {
 
-            case "positiveRegistration": return write();
+            case "positiveRegistration": return write("src/test/resources/positivedata.csv");
 
             case "negativeRegistrationWrongEmail": return read("src/test/resources/negativeemaildata.csv");
 
@@ -58,31 +58,17 @@ public class DataProviderRegistration {
         return list.iterator();
     }
 
-    public Iterator<Object[]> write() {
+    public Iterator<Object[]> write(String path) {
 
-        String email = faker.internet().emailAddress();
-        String password = faker.internet().password() + "A$";
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(path))) {
 
-        list.add(new Object[]{
-
-                UserDtoLombok.builder()
-                        .name(faker.name().firstName())
-                        .lastName(faker.name().lastName())
-                        .email(email)
-                        .password(password)
-                        .build()
-        });
-
-        try (BufferedWriter out = new BufferedWriter(new FileWriter("src/test/resources/positivedata.csv", true))) {
-
-            out.write(email + "," + password);
-            out.newLine();
+            out.write(faker.internet().emailAddress() + "," + faker.internet().password() + "A$");
 
         } catch (IOException e) {
 
             throw new RuntimeException(e);
         }
 
-        return list.iterator();
+        return read(path);
     }
 }
