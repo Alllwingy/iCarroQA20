@@ -1,5 +1,6 @@
 package tests;
 
+import dto.AddCarDTO;
 import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
@@ -18,14 +19,20 @@ import java.util.Arrays;
 @Listeners(TestNGListener.class)
 public class BaseTest {
 
-    Logger logger = LoggerFactory.getLogger(BaseTest.class);
-    FakerGenerator faker = new FakerGenerator();
-    UserDTO userDTO;
-    UserDTOWith userDTOWith;
-    UserDtoLombok userDtoLombok;
-
     static ApplicationManager app = new ApplicationManager();
+    Logger logger = LoggerFactory.getLogger(BaseTest.class);
     RandomUtils randomUtils = new RandomUtils();
+    FakerGenerator faker = new FakerGenerator();
+
+    UserDTO userDTO = new UserDTO(ConfigurationProperties.getProperty("email"),
+            ConfigurationProperties.getProperty("password"));
+    UserDTOWith userDTOWith = new UserDTOWith()
+            .withEmail(ConfigurationProperties.getProperty("email"))
+            .withPassword(ConfigurationProperties.getProperty("password"));
+    UserDtoLombok  userDtoLombok = UserDtoLombok.builder()
+            .email(ConfigurationProperties.getProperty("email"))
+            .password(ConfigurationProperties.getProperty("password"))
+            .build();
 
     boolean isFlagLogin = false, isFlagPopUp = false;
 
@@ -36,7 +43,7 @@ public class BaseTest {
 
     @AfterSuite(alwaysRun = true)
     public void stop() {
-        app.tearDown();
+//        app.tearDown();
     }
 
     public void logoutIflogin() {
@@ -47,18 +54,6 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void beforeEachMethod(Method method) {
-
-        userDTO = new UserDTO(ConfigurationProperties.getProperty("email"),
-                ConfigurationProperties.getProperty("password"));
-
-        userDTOWith = new UserDTOWith()
-                .withEmail(ConfigurationProperties.getProperty("email"))
-                .withPassword(ConfigurationProperties.getProperty("password"));
-
-        userDtoLombok = UserDtoLombok.builder()
-                .email(ConfigurationProperties.getProperty("email"))
-                .password(ConfigurationProperties.getProperty("password"))
-                .build();
 
         logger.info("--------------------------------------------------------------");
         logger.info("started method: " + method.getName() + ", with parameters: " + Arrays.toString(method.getParameters()));

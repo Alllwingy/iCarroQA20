@@ -1,6 +1,5 @@
 package manager;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
@@ -15,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 
     static EventFiringWebDriver driver;
-    UserHelper userHelper;
+    HelperUser userHelper;
+    HelperCar carHelper;
     Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
     static String browser;
 
@@ -41,11 +41,12 @@ public class ApplicationManager {
         logger.info("open: " + ConfigurationProperties.getProperty("url") + " Start testing: " + LocalDateTime.now());
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         driver.register(new WDListener());
 
-        userHelper = new UserHelper(driver);
+        userHelper = new HelperUser(driver);
+        carHelper = new HelperCar(driver);
         logger.info("navigated to the url: https://ilcarro.web.app/search");
     }
 
@@ -53,8 +54,14 @@ public class ApplicationManager {
         driver.navigate().to("https://ilcarro.web.app/search");
     }
 
-    public UserHelper getUserHelper() {
+    public HelperUser getUserHelper() {
+
         return userHelper;
+    }
+
+    public HelperCar getCarHelper() {
+
+        return carHelper;
     }
 
     public void tearDown() {

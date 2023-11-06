@@ -21,7 +21,6 @@ public class ConfigurationProperties {
         String target = System.getProperty("target", "config");
         String path = String.format("src/test/resources/%s.properties", target);
 
-
         try (FileReader fileReader = new FileReader(path)) {
 
             properties.load(fileReader);

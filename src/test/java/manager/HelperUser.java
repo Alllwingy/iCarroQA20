@@ -6,9 +6,9 @@ import dto.UserDtoLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class UserHelper extends BaseHelper {
+public class HelperUser extends BaseHelper {
 
-    public UserHelper(WebDriver driver) {
+    public HelperUser(WebDriver driver) {
         super(driver);
     }
 
@@ -37,7 +37,7 @@ public class UserHelper extends BaseHelper {
 
     public void openLoginPage() {
 
-        clickBase(btnLoginNavigatorMenu);
+        clickBase(waitBase(btnLoginNavigatorMenu));
     }
 
     public void openRegistrationPage() {
@@ -66,6 +66,15 @@ public class UserHelper extends BaseHelper {
         clickBase(btnYallaLoginForm);
     }
 
+    public void loginAddCar(UserDtoLombok user) {
+
+        openLoginPage();
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
+        clickBase(btnYallaLoginForm);
+        clickOkPopUpSuccessLogin();
+    }
+
     public boolean validatePopUpMessageSuccessAfterLogin() {
 
         return isTextEqual(textSuccessLoginPopUp, waitBase(textSuccessLoginPopUp, "Logged in success"));
@@ -92,9 +101,7 @@ public class UserHelper extends BaseHelper {
 
     public boolean validatePopUpMessageSuccessAfterRegistration() {
 
-        String expectedResult = "Registered".toUpperCase();
-
-        return isTextEqual(textPopUpSuccessRegH1, expectedResult);
+        return isTextEqual(textPopUpSuccessRegH1, waitBase(textPopUpSuccessRegH1, "Registered"));
     }
 
     public boolean btnLogoutExist() {

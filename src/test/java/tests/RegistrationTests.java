@@ -29,15 +29,6 @@ public class RegistrationTests extends BaseTest{
     @Test (groups = { "regression", "all" }, dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
     public void positiveRegistration(UserDtoLombok userDP, Method method) {
 
-//        String email = randomUtils.generateEmail(7);
-
-//        UserDtoLombok user = UserDtoLombok.builder()
-//                .email(email)
-//                .password("123456Aa$")
-//                .lastName(faker.lastName())
-//                .name(faker.firstName())
-//                .build();
-
         logger.info(String.format("in method: " + method.getName()
                 + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
 
@@ -52,13 +43,6 @@ public class RegistrationTests extends BaseTest{
     @Test (dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
     public void negativeRegistrationWrongEmail(UserDtoLombok userDP, Method method) {
 
-//        UserDtoLombok user = UserDtoLombok.builder()
-//                .email("abc@")
-//                .password("123456Aa$")
-//                .lastName(faker.lastName())
-//                .name(faker.firstName())
-//                .build();
-
         logger.info(String.format("in method: " + method.getName()
                 + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));
 
@@ -68,15 +52,6 @@ public class RegistrationTests extends BaseTest{
 
     @Test (dataProvider = "data", dataProviderClass = DataProviderRegistration.class)
     public void negativeRegistrationWrongPassword(UserDtoLombok userDP, Method method) {
-
-//        String email = randomUtils.generateEmail(7);
-//
-//        UserDtoLombok user = UserDtoLombok.builder()
-//                .email(email)
-//                .password("123456")
-//                .lastName(faker.lastName())
-//                .name(faker.firstName())
-//                .build();
 
         logger.info(String.format("in method: " + method.getName()
                 + repetedLoggerText, userDP.getEmail(), userDP.getPassword()));

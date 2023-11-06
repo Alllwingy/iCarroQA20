@@ -132,7 +132,7 @@ public class WDListener extends AbstractWebDriverEventListener {
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
         super.afterFindBy(by, element, driver);
 
-        logger.info("element found success: " + by + ", element name is: " + element.getTagName());
+//        logger.info("element found success: " + by + ", element name is: " + element.getTagName());
     }
 
     @Override

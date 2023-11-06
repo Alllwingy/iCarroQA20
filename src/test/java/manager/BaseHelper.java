@@ -30,13 +30,18 @@ public class BaseHelper {
         return driver.findElements(locator);
     }
 
+    public WebElement getElementBase(By locator) {
+
+        return findElementBase(locator);
+    }
+
     public boolean isSelected(By locator) {
 
         return findElementBase(locator).isSelected();
     }
 
     public boolean isElementExist(By locator) {
-        return findElementsBase(locator).size() > 0;
+        return !findElementsBase(locator).isEmpty();
     }
 
     public void clickBase(By locator) {
@@ -104,7 +109,6 @@ public class BaseHelper {
     public By waitBase(By locator) {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.ignoring(TimeoutException.class);
         wait.until(ExpectedConditions.elementToBeClickable(locator));
 
         return locator;

@@ -4,15 +4,22 @@ import data.DataProviderLogin;
 import dto.UserDtoLombok;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import utils.ConfigurationProperties;
 
 import java.lang.reflect.Method;
 
 public class LoginTests extends BaseTest {
 
+    UserDtoLombok userDtoLombok;
     String repetedLoggerText;
 
     @BeforeMethod (alwaysRun = true)
     public void beforeMethod() {
+
+        userDtoLombok = UserDtoLombok.builder()
+                .email(ConfigurationProperties.getProperty("email"))
+                .password(ConfigurationProperties.getProperty("password"))
+                .build();
 
         repetedLoggerText = " fill email input field with: %s and password input field with: %s and click button Yalla";
 
