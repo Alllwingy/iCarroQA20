@@ -1,5 +1,6 @@
 package manager;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
@@ -62,6 +63,14 @@ public class ApplicationManager {
     public HelperCar getCarHelper() {
 
         return carHelper;
+    }
+
+    public EventFiringWebDriver getDriver() {
+
+        if (driver == null)
+            init();
+
+        return driver;
     }
 
     public void tearDown() {

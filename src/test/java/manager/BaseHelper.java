@@ -6,15 +6,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
 public class BaseHelper {
 
     Logger logger = LoggerFactory.getLogger(BaseHelper.class);
-
-
     WebDriver driver;
+
+//    ApplicationManager applicationManager = new ApplicationManager();
+//    WebDriverWait wait = new WebDriverWait(applicationManager.getDriver(), 10);
+
+
 
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
@@ -100,17 +104,13 @@ public class BaseHelper {
 
     public String waitBase(By locator, String text) {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
-
+        new WebDriverWait(driver, 10).until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
         return text;
     }
 
     public By waitBase(By locator) {
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
-
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
 }

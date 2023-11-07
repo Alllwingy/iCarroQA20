@@ -5,6 +5,10 @@ import dto.UserDTOWith;
 import dto.UserDtoLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.regex.Pattern;
 
 public class HelperUser extends BaseHelper {
 
@@ -78,7 +82,7 @@ public class HelperUser extends BaseHelper {
     public boolean validatePopUpMessageSuccessAfterLogin() {
 
         return isTextEqual(textSuccessLoginPopUp, waitBase(textSuccessLoginPopUp, "Logged in success"));
-    }
+   }
 
     public boolean validatePopUpMessageLoginIncorrect() {
 
@@ -116,6 +120,7 @@ public class HelperUser extends BaseHelper {
     public void clickOkPopUpSuccessLogin() {
         // clickBase(btnOkPopUp);
         // typeTextBase(textPopUpSuccessRegH1, String.valueOf(Keys.ESCAPE));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.textMatches(textSuccessLoginPopUp, Pattern.compile("[\\w]*")));
         clickBase(btnOkPopUp);
         // clickByXY(btnOkPopUp, 0.5, 2);
         //      clickBase(textPopUpSuccessRegH1);

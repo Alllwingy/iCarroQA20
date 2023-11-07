@@ -1,14 +1,12 @@
 package manager;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import dto.AddCarDTO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.regex.Pattern;
 
 public class HelperCar extends BaseHelper {
 
@@ -30,8 +28,10 @@ public class HelperCar extends BaseHelper {
     By inputSerialNumber = By.id("serialNumber");
     By inputPrice = By.id("price");
     By inputAbout = By.id("about");
-    By labelPhoto = By.id("photos");
+    By inputPhoto = By.id("photos");
+    By divPhoto = By.cssSelector("div.mat-chip-ripple");
     By buttonSubmit = By.cssSelector("button[type='submit']");
+    By h2CarAddedPopUpText = By.cssSelector("h2.message");
     By button = By.cssSelector("button[type='button']:nth-child(3)");
 
     public void openFormAddCar() {
@@ -61,7 +61,7 @@ public class HelperCar extends BaseHelper {
 
     private void uploadPhoto() {
 
-        getElementBase(labelPhoto)
+        getElementBase(inputPhoto)
                 .sendKeys("C:\\Users\\Alll.wingy\\Alll.space\\IntelliJ_IDEA\\ilCarroQA20-main\\src\\test\\resources\\JavaRush.Variable_1.png");
     }
 
@@ -79,6 +79,20 @@ public class HelperCar extends BaseHelper {
         typeTextBase(inputAbout, carDTO.getAbout());
         uploadPhoto();
         clickBase(buttonSubmit);
+    }
+
+    public void acceptPopUp() {
+
         clickBase(button);
+    }
+
+    public boolean validatePhotoAddSuccess() {
+
+        return isElementExist(divPhoto);
+    }
+
+    public boolean validateTextAddCarSuccess(AddCarDTO carDTO) {
+
+        return isTextEqual(h2CarAddedPopUpText, waitBase(h2CarAddedPopUpText, String.format("%s %s added successful", carDTO.getManufacture(), carDTO.getModel())));
     }
 }

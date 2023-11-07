@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7ccdfe9-75ea-401b-81d3-8626cef2bb5b" name="Changes" comment="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative">
-      <change beforePath="$PROJECT_DIR$/src/test/screenshots/screenshot-2023-10-27_07-47-53.893.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/screenshots/screenshot-2023-10-27_07-48-54.658.png" beforeDir="false" />
+    <list default="true" id="e7ccdfe9-75ea-401b-81d3-8626cef2bb5b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/HelperCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/HelperCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/HelperUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/positivedata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/positivedata.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,30 +80,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'tests'">
-    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.LoginTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="RegistrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,6 +152,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TestCar.positive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.TestCar.positive&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests in 'tests'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,10 +203,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'tests'" />
+        <item itemvalue="Gradle.TestCar.positive" />
         <item itemvalue="Gradle.TestCar" />
         <item itemvalue="Gradle.RegistrationTests" />
         <item itemvalue="Gradle.RegistrationTests.positiveRegistration" />
-        <item itemvalue="Gradle.LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699269095494</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative + Hw_15_All tests.txt">
+      <option name="closed" value="true" />
+      <created>1699273135371</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699273135372</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -331,19 +345,9 @@
     <MESSAGE value="commit Hw_13 All tests at once | fail + screenshot" />
     <MESSAGE value="commit Hw_14_alpha DataProviderRegistrationCSV: positive: reading generated data from file.csv" />
     <MESSAGE value="commit Hw_14 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative" />
-    <MESSAGE value="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative" />
     <MESSAGE value="commit Hw_15 1.AddCarDTO 2.CarHelper 3.One positive test 4.All tests together 5.Add photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit Hw_15 1.AddCarDTO 2.CarHelper 3.One positive test 4.All tests together 5.Add photo" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/manager/BaseHelper.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative" />
+    <MESSAGE value="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative + Hw_15_All tests.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit Hw_15 DataProviderLogin: positive &amp; negative; DataProviderLoginCSV: positive &amp; negative; DataProviderRegistrationCSV: positive &amp; negative + Hw_15_All tests.txt" />
   </component>
 </project>

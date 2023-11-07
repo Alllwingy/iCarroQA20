@@ -9,6 +9,7 @@ import manager.TestNGListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 import utils.ConfigurationProperties;
 import utils.FakerGenerator;
 import utils.RandomUtils;
@@ -20,6 +21,7 @@ import java.util.Arrays;
 public class BaseTest {
 
     static ApplicationManager app = new ApplicationManager();
+    SoftAssert softAssert = new SoftAssert();
     Logger logger = LoggerFactory.getLogger(BaseTest.class);
     RandomUtils randomUtils = new RandomUtils();
     FakerGenerator faker = new FakerGenerator();

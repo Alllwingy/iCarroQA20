@@ -2,10 +2,9 @@ package tests;
 
 import data.DataProviderAddCar;
 import dto.AddCarDTO;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 public class TestCar extends BaseTest {
 
@@ -21,15 +20,26 @@ public class TestCar extends BaseTest {
         app.getCarHelper().openFormAddCar();
     }
 
+    @AfterMethod
+    public void afterMethod() {
+
+        app.getCarHelper().acceptPopUp();
+    }
+
     @AfterClass
     public void afterClass() {
 
         app.getUserHelper().logout();
     }
 
-    @Test (dataProvider = "data", dataProviderClass = DataProviderAddCar.class)
+    @Test(dataProvider = "data", dataProviderClass = DataProviderAddCar.class)
     public void positive(AddCarDTO carDTO) {
 
         app.getCarHelper().fillFormAddCar(carDTO);
+
+        softAssert.assertTrue(app.getCarHelper().validatePhotoAddSuccess());
+        softAssert.assertTrue(app.getCarHelper().validateTextAddCarSuccess(carDTO));
+
+        softAssert.assertAll();
     }
 }
