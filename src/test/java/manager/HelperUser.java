@@ -16,7 +16,7 @@ public class HelperUser extends BaseHelper {
         super(driver);
     }
 
-    By btnLoginNavigatorMenu = By.xpath("//a[contains(@href, '/login')]");
+    By btnLoginNavigatorMenu = By.xpath("//a[contains(@href, 'login')]");
     By inputEmailLoginForm = By.xpath("//input[@id='email']");
     By inputPasswordLoginForm = By.xpath("//input[@id='password']");
     By btnYallaLoginForm = By.xpath("//button[@type='submit']");

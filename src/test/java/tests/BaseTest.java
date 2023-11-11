@@ -45,7 +45,7 @@ public class BaseTest {
 
     @AfterSuite(alwaysRun = true)
     public void stop() {
-//        app.tearDown();
+        app.tearDown();
     }
 
     public void logoutIflogin() {

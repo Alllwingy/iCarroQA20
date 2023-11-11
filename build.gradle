@@ -28,8 +28,12 @@ test {
     useTestNG()
 }
 
-task ilcarrotests(type: Test) {
+tasks.register('ilcarro', Test) {
     useTestNG() {
+        if (project.hasProperty('browser')) {
+            systemProperty 'browser', "${browser}"
+        }
+
         def suite = System.getProperty('suite', '')
         if (suite.equals('login')) {
             suites 'src/test/resources/login.xml'
@@ -38,13 +42,12 @@ task ilcarrotests(type: Test) {
         } else if (suite.equals('all')) {
             suites 'src/test/resources/tests.xml'
         }
+
         def groups = System.getProperty('groups')
         if (groups != null) {
             includeGroups groups
         }
-        if (project.hasProperty('browser')) {
-            systemProperty 'browser', "${browser}"
-        }
+
         if (project.hasProperty('target')) {
             systemProperty 'target', "${target}"
         }
